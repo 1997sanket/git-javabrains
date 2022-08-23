@@ -1,0 +1,45 @@
+1. Git is mainly used for 2 reasons: a) version control		b) team collab 
+
+2. There are three stages of GIT.
+	a) working area	b) staging area	c) committed area
+
+3. We take snapshots/commits of the code which is stable and we can go back to it if something fails in the future.
+	So in a way, GIT allows time-travelling.
+
+4. Git tracks changes and not files. Even a minor change in a file is a change, and we have to say "git add ." again in order 
+	to stage our changes.
+
+5. Staging is like when we call all our favorite friends on a stage and then we click a picture to save it, so we can later
+	go back and live that memory. Here, getting our friends on the stage is "Staging" and clicking the picture is 
+	"Snapshot/Committing".
+
+6. We can use "git log" to see all the commits. We can use "git log -p" to see the changes in each commit.
+
+7. Suppose we committed our code and went for a small break. Meanwhile, our dog walks our keyboard and adds some more text.
+	So we come back and we see some gibberish written on the screen, now how do we revert back to the last commit when our
+	code isn't even in the staged area?
+		ANS: git checkout -- <name of the file> OR <.  for all files>
+	That way we will go back to the previous commit.
+
+8. We can unstage a staged file using "git restore --staged <file_name>". We can also unmodify a modified file as we did 
+	in the 7th step, using "git restore <file_name>" (feels like a better option, more readable)
+
+
+9. Ammend to the last commit:
+	a. Suppose you made changes to file 1, and you committed it. But then you realize that I should have also changed file 2
+		and should have added to that commit. 
+	b. Well you can do that using, "git commit --amend"
+	c. "amend" command can also be used to change the comment of the last commit.
+
+10. Diff:
+	a) Suppose you modified some files, and now you want to see what changes you have made before staging. Use "git diff"
+	b) Suppose you have staged the changes and now you want to see the changes, Use "git diff --staged"
+	c) You can also see the changes in individual files, using diff, checkout the git manual.
+
+
+11. GitIgnore
+	a) In a typical source code, there are a bunch of files that we don't need to commit in git. These files should be 
+		"ignored", It can be done by creating another file called ".gitignore"
+	b) Now inside this file, you have to add the file that needs to be ignored, AND you need to commit this .gitignore file.
+
+12. Commits are chained in git. Lastest commit points to the previous commit and so on.
